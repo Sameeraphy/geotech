@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AS 4133.4.1 Point Load Test Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">AS 4133.4.1</p>
+          <h1>Point Load Test Calculator</h1>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel input-panel">
+          <h2>Sample configuration</h2>
+
+          <div class="field-group">
+            <label for="sampleType">Sample type</label>
+            <select id="sampleType">
+              <option value="diametral">Diametral core</option>
+              <option value="axial">Axial core</option>
+              <option value="block">Block</option>
+              <option value="irregular">Irregular lump</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="rockType">Rock type</label>
+            <select id="rockType">
+              <option value="granite">Granite</option>
+              <option value="basalt">Basalt</option>
+              <option value="limestone">Limestone</option>
+              <option value="sandstone">Sandstone</option>
+              <option value="siltstone">Siltstone</option>
+              <option value="mudstone">Mudstone / shale</option>
+              <option value="schist">Schist / gneiss</option>
+              <option value="marble">Marble</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="kFactor">UCS conversion factor, K</label>
+            <input
+              id="kFactor"
+              type="number"
+              step="0.1"
+              min="0.1"
+              placeholder="e.g. 23.0"
+            />
+          </div>
+
+          <div id="dynamicInputs"></div>
+
+          <div class="field-group inline unit-group">
+            <label for="loadUnit">Load at failure</label>
+            <div class="inline-inputs">
+              <input id="peakLoad" type="number" step="0.01" placeholder="e.g. 12.5" />
+              <select id="loadUnit">
+                <option value="kN">kN</option>
+                <option value="N">N</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button id="calculateBtn" type="button">Calculate UCS</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+          </div>
+        </section>
+
+        <section class="panel results-panel">
+          <h2>Results</h2>
+          <div id="results" class="results-empty">
+            Select a sample type and enter the test data to calculate the point load strength index.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="signature">sameera jayathunge</div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+:root {
+  --bg: #071a23;
+  --panel: rgba(11, 29, 39, 0.88);
+  --panel-strong: rgba(15, 38, 49, 0.96);
+  --primary: #78d0ff;
+  --primary-strong: #41b2e3;
+  --text: #ecf5ff;
+  --muted: rgba(236, 245, 255, 0.72);
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 20px 48px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #061721 0%, #0b2231 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.construction-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px 80px;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(5, 18, 26, 0.68), rgba(5, 18, 26, 0.82)),
+    radial-gradient(circle at top, rgba(120, 208, 255, 0.12), transparent 50%),
+    linear-gradient(135deg, rgba(21, 51, 67, 0.9), rgba(7, 16, 23, 0.92));
+}
+
+.construction-shell {
+  width: min(980px, 100%);
+  background: rgba(9, 23, 31, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 42px 28px 30px;
+  backdrop-filter: blur(6px);
+}
+
+.construction-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 208, 255, 0.38);
+  background: rgba(120, 208, 255, 0.08);
+  color: var(--primary);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero {
+  margin-top: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  margin: 0;
+  max-width: 680px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.08rem;
+}
+
+.tool-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.tool-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(120, 208, 255, 0.5);
+}
+
+.tool-link.active {
+  background: rgba(120, 208, 255, 0.1);
+  border-color: rgba(120, 208, 255, 0.4);
+  color: var(--primary);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.module-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 18px;
+  min-height: 180px;
+}
+
+.module-card.active {
+  background: linear-gradient(180deg, rgba(120, 208, 255, 0.08), rgba(9, 23, 31, 0.92));
+  border-color: rgba(120, 208, 255, 0.38);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-card h2 {
+  margin: 16px 0 10px;
+  font-size: 1.4rem;
+}
+
+.module-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.signature {
+  position: fixed;
+  right: 16px;
+  bottom: 12px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: rgba(236, 245, 255, 0.8);
+  background: rgba(6, 20, 28, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 6px 8px;
+}
+
+@media (max-width: 760px) {
+  .construction-shell {
+    padding: 30px 18px 24px;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-nav {
+    flex-direction: column;
+  }
+
+  .tool-link {
+    width: 100%;
+  }
+}

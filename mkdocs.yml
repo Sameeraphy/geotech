@@ -1,0 +1,16 @@
+site_name: as1726_geotech Documentation
+site_description: "Documentation for the as1726_geotech Python library"
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - API: api.md
+  - Changelog: changelog.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python: {}

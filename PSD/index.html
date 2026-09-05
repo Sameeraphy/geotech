@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSD Analysis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">AS 1726 / Geotech</p>
+          <h1>Particle Size Distribution (PSD)</h1>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel input-panel">
+          <h2>Input data</h2>
+
+          <div class="field-group">
+            <label for="sieveSizes">Sieve sizes (mm)</label>
+            <textarea id="sieveSizes" rows="6" placeholder="e.g. 75, 53, 37.5, 26.5, 19, 13.2, 9.5, 4.75, 2.36, 1.18, 0.6, 0.425, 0.3, 0.15, 0.075">75, 53, 37.5, 26.5, 19, 13.2, 9.5, 4.75, 2.36, 1.18, 0.6, 0.425, 0.3, 0.15, 0.075</textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="retainedMasses">Retained mass (g)</label>
+            <textarea id="retainedMasses" rows="6" placeholder="e.g. 0, 120, 280, 540, 620, 710, 890, 760, 520, 410, 220, 180, 150, 80, 40">0, 120, 280, 540, 620, 710, 890, 760, 520, 410, 220, 180, 150, 80, 40</textarea>
+          </div>
+
+          <div class="button-row">
+            <button id="calculateBtn" type="button">Calculate PSD</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+          </div>
+        </section>
+
+        <section class="panel results-panel">
+          <h2>Results</h2>
+          <div id="results" class="results-empty">
+            Enter sieve sizes and retained masses to compute the PSD summary.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="signature">sameera jayathunge</div>
+    <script src="script.js"></script>
+  </body>
+</html>
